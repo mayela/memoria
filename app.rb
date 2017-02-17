@@ -13,7 +13,7 @@ get '/resultado' do
   erb :resultado
 end
 
-post '/cambiar/:carta' do |carta|
-  session["carta1"] = carta
+post '/cambiar/:carta' do |input|
+  session["carta"+input] = input
   erb :juego
 end
