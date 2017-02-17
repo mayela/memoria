@@ -1,10 +1,11 @@
 class Memory
 
   def initialize
-    @tablero = {"a"=>"A"}
+    @tablero = {"a"=>["A","*"]}
   end
 
-  def seleccion1
-      @tablero["a"]
+  def seleccion fila, col
+      @tablero[fila][col]
   end
+
 end
