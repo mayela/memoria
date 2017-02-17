@@ -23,7 +23,6 @@ end
 Given(/^acabe un juego$/) do
   visit '/'
   click_button("Play")
-  visit '/jugar'
   visit '/resultado'
 end
 
@@ -39,4 +38,12 @@ end
 Then(/^debo poder ver "([^"]*)" y "([^"]*)"$/) do |intentos, faltan|
   expect(page.body).to match /#{intentos}/
   expect(page.body).to match /#{faltan}/
+end
+
+Given(/^de clic en una carta$/) do
+  page.find('#1_1').click
+end
+
+Then(/^quiero poder ver el caracter oculto "([^"]*)"$/) do |caracter|
+expect(page.find("#1_1").value).to eq caracter
 end
