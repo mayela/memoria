@@ -31,3 +31,12 @@ Then(/^quiero poder ver el resultado "([^"]*)"$/) do |texto|
   expect(page.body).to match /#{texto}/
 end
 
+Given(/^inicie el juego$/) do
+  visit '/'
+  click_button("Play")
+end
+
+Then(/^debo poder ver "([^"]*)" y "([^"]*)"$/) do |intentos, faltan|
+  expect(page.body).to match /#{intentos}/
+  expect(page.body).to match /#{faltan}/
+end
